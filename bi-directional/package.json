@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "lerna run --scope @basic-remotes-component/* --parallel start"
+    "start": "lerna run --scope @bi-directional/* --parallel start"
   },
   "author": "ding",
   "license": "MIT",
