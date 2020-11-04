@@ -5,6 +5,13 @@
   "devDependencies": {
     "lerna": "^3.22.1"
   },
+
+  "workspaces": {
+    "packages": [
+      "basic-remotes-component/*"
+    ]
+  },
   "scripts": {
+    "bootstrap": "lerna bootstrap --ignore-scripts"
   }
 }
