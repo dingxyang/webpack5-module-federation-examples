@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Axios from 'axios'
 
 function loadComponent(scope, module) {
   return async () => {
@@ -110,9 +111,10 @@ function App() {
   const [buttonDiv, setbuttonDiv] = React.useState(undefined);
 
   useEffect(() => {
-    query().then(res => {
+    Axios.get('/menu.json').then(res => {
+      console.log(res);
       let buttonDiv;
-      buttonDiv = res.map(item => {
+      buttonDiv = res.data.map(item => {
         return (
           <button key={item.module} onClick={()=>{
             setApp(item);

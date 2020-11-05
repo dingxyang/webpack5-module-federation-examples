@@ -16,10 +16,12 @@
   "scripts": {
     "start": "webpack-cli serve",
     "build": "webpack --mode production",
+    "postbuild": "cp menu.json dist/",
     "serve": "serve dist -p 3001",
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
