@@ -18,7 +18,7 @@ const useDynamicScript = (args) => {
   const [ready, setReady] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!args.url) {
       return;
     }
@@ -117,17 +117,13 @@ function App() {
       buttonDiv = res.data.map(item => {
         return (
           <button key={item.module} onClick={()=>{
-            setApp(item);
+            setSystem(item);
           }}>{item.module}</button>
         )
       })
       setbuttonDiv(buttonDiv);
     })
   }, [])
-
-  function setApp(item) {
-    setSystem(item);
-  }
 
   return (
     <div
