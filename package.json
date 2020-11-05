@@ -11,7 +11,8 @@
       "basic-remotes-component/*",
       "bi-directional/*",
       "dynamic-system-host/*",
-      "shared-context/*"
+      "shared-context/*",
+      "redux-reducer-injection/*"
     ]
   },
   "scripts": {
