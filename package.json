@@ -12,7 +12,8 @@
       "bi-directional/*",
       "dynamic-system-host/*",
       "shared-context/*",
-      "redux-reducer-injection/*"
+      "redux-reducer-injection/*",
+      "shared-routes2/*"
     ]
   },
   "scripts": {
