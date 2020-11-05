@@ -1,0 +1,17 @@
+[
+    {
+        "url": "http://localhost:3002/remoteEntry.js",
+        "scope": "app2",
+        "module": "./Widget"
+      },
+      {
+        "url": "http://localhost:3003/remoteEntry.js",
+        "scope": "app3",
+        "module": "./Widget"
+      },
+      {
+        "url": "http://localhost:3003/remoteEntry.js",
+        "scope": "app3",
+        "module": "./Other"
+      }
+]

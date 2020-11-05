@@ -9,7 +9,8 @@
   "workspaces": {
     "packages": [
       "basic-remotes-component/*",
-      "bi-directional/*"
+      "bi-directional/*",
+      "dynamic-system-host/*"
     ]
   },
   "scripts": {
