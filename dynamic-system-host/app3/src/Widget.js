@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import Other from './Other'
 
 export default function Widget() {
   React.useEffect(() => {
@@ -18,6 +19,7 @@ export default function Widget() {
       <p>
         Using <strong>momentjs</strong> for format the date
       </p>
+      <Other/>
       <p>{moment().format("MMMM Do YYYY, h:mm:ss a")}</p>
     </div>
   );

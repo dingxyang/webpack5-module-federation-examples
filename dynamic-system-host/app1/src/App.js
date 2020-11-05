@@ -95,6 +95,11 @@ function query() {
       url: "http://localhost:3003/remoteEntry.js",
       scope: "app3",
       module: "./Widget",
+    },
+    {
+      url: "http://localhost:3003/remoteEntry.js",
+      scope: "app3",
+      module: "./Other",
     }
   ])
 }
@@ -109,9 +114,9 @@ function App() {
       let buttonDiv;
       buttonDiv = res.map(item => {
         return (
-          <button key={item.scope} onClick={()=>{
+          <button key={item.module} onClick={()=>{
             setApp(item);
-          }}>{item.scope}</button>
+          }}>{item.module}</button>
         )
       })
       setbuttonDiv(buttonDiv);
