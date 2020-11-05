@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "lerna run --scope @dynamic-system-host/* --parallel start"
+  },
+  "devDependencies": {
+    "lerna": "3.22.1"
+  }
+}

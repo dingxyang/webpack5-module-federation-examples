@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function loadComponent(scope, module) {
   return async () => {
@@ -84,23 +84,42 @@ function System(props) {
   );
 }
 
-function App() {
-  const [system, setSystem] = React.useState(undefined);
-
-  function setApp2() {
-    setSystem({
+function query() {
+  return Promise.resolve([
+    {
       url: "http://localhost:3002/remoteEntry.js",
       scope: "app2",
       module: "./Widget",
-    });
-  }
-
-  function setApp3() {
-    setSystem({
+    },
+    {
       url: "http://localhost:3003/remoteEntry.js",
       scope: "app3",
       module: "./Widget",
-    });
+    }
+  ])
+}
+
+function App() {
+  const [system, setSystem] = React.useState(undefined);
+
+  const [buttonDiv, setbuttonDiv] = React.useState(undefined);
+
+  useEffect(() => {
+    query().then(res => {
+      let buttonDiv;
+      buttonDiv = res.map(item => {
+        return (
+          <button key={item.scope} onClick={()=>{
+            setApp(item);
+          }}>{item.scope}</button>
+        )
+      })
+      setbuttonDiv(buttonDiv);
+    })
+  }, [])
+
+  function setApp(item) {
+    setSystem(item);
   }
 
   return (
@@ -117,8 +136,7 @@ function App() {
         <strong>remotes</strong> and <strong>exposes</strong>. It will no load
         components that have been loaded already.
       </p>
-      <button onClick={setApp2}>Load App 2 Widget</button>
-      <button onClick={setApp3}>Load App 3 Widget</button>
+      {buttonDiv}
       <div style={{ marginTop: "2em" }}>
         <System system={system} />
       </div>

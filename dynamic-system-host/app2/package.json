@@ -5,12 +5,13 @@
   "devDependencies": {
     "@babel/core": "7.12.3",
     "@babel/preset-react": "7.12.1",
+    "@webpack-cli/serve": "^1.1.0",
     "babel-loader": "8.1.0",
     "html-webpack-plugin": "4.5.0",
     "serve": "11.3.2",
-    "webpack": "5.2.0",
-    "webpack-cli": "4.1.0",
-    "webpack-dev-server": "3.11.0"
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
     "start": "webpack-cli serve",
@@ -19,7 +20,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
