@@ -10,7 +10,8 @@
     "packages": [
       "basic-remotes-component/*",
       "bi-directional/*",
-      "dynamic-system-host/*"
+      "dynamic-system-host/*",
+      "shared-context/*"
     ]
   },
   "scripts": {
