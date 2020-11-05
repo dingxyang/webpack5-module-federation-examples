@@ -35,6 +35,7 @@ module.exports = {
       exposes: {
         "./routes": "./src/routes",
         "./AboutPage": "./src/AboutPage",
+        "./HelloPage": "./src/HelloPage",
       },
       shared: {
         ...deps,

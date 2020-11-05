@@ -1,7 +1,7 @@
 import { HashRouter, Route, Switch } from "react-router-dom";
 
 import Navigation from "./Navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import localRoutes from "./routes";
 
 function loadComponent(scope, module) {
@@ -17,8 +17,16 @@ function loadComponent(scope, module) {
   };
 }
 
-const App = () => {
-  const Component = React.lazy(loadComponent("app2", "./routes"));
+const App = ({ system }) => {
+  const [routeList, setrouteList] = useState(undefined);
+  useEffect(() => {
+    const routes= system.map((item) => {
+      const Component = React.lazy(loadComponent(item.scope, item.module));
+      return <Component key={item.module} />;
+    });
+    setrouteList(routes);
+  }, [system])
+  
   return (
     <HashRouter>
       <div>
@@ -34,9 +42,7 @@ const App = () => {
                 exact={route.exact}
               />
             ))}
-            <React.Suspense fallback="Loading System">
-              <Component />
-            </React.Suspense>
+            {routeList}
           </Switch>
         </React.Suspense>
       </div>
