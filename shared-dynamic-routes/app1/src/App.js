@@ -20,13 +20,21 @@ function loadComponent(scope, module) {
 const App = ({ system }) => {
   const [routeList, setrouteList] = useState(undefined);
   useEffect(() => {
-    const routes= system.map((item) => {
-      const Component = React.lazy(loadComponent(item.scope, item.module));
-      return <Component key={item.module} />;
+    let routesArr = [];
+     system.map((item) => {
+      const { routesModules, scope } = item;
+      routesModules.map((routeModule) => {
+        const Component = React.lazy(loadComponent(scope, routeModule[1]));
+        routesArr.push({
+          path: routeModule[0],
+          component: Component,
+          exact: true,
+        });
+      });
     });
-    setrouteList(routes);
-  }, [system])
-  
+    setrouteList(routesArr);
+  }, [system]);
+
   return (
     <HashRouter>
       <div>
@@ -42,7 +50,15 @@ const App = ({ system }) => {
                 exact={route.exact}
               />
             ))}
-            {routeList}
+            {routeList &&
+              routeList.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  component={route.component}
+                  exact={route.exact}
+                />
+              ))}
           </Switch>
         </React.Suspense>
       </div>

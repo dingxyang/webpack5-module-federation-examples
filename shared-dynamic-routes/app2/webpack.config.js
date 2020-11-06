@@ -33,7 +33,6 @@ module.exports = {
         app1: "app1@http://localhost:3001/remoteEntry.js",
       },
       exposes: {
-        "./routes": "./src/routes",
         "./AboutPage": "./src/AboutPage",
         "./HelloPage": "./src/HelloPage",
       },

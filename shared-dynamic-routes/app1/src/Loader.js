@@ -4,16 +4,19 @@ import App from "./App";
 function query() {
   return Promise.resolve([
     {
-      url: "http://localhost:3003/remoteEntry.js",
-      scope: "app3",
-      module: "./routes",
-      routesModules:['./AboutPage', './HelloPage']
-    },
-    {
       url: "http://localhost:3002/remoteEntry.js",
       scope: "app2",
-      module: "./routes",
-      routesModules:['./TestPage']
+      routesModules: [
+        ["/about", "./AboutPage"],
+        ["/hello", "./HelloPage"],
+      ]
+    },
+    {
+      url: "http://localhost:3003/remoteEntry.js",
+      scope: "app3",
+      routesModules: [
+        ["/test1", "./TestPage"],
+      ]
     },
   ]);
 }
