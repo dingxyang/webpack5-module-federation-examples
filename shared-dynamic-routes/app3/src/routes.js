@@ -1,20 +1,13 @@
 import React from "react";
-import { Route } from "react-router-dom";
 
-function Comp() {
-  const TestPage = React.lazy(() => import("./TestPage"));
+const TestPage = React.lazy(() => import("./TestPage"));
 
-  const routes = [
-    {
-      path: "/test1",
-      component: TestPage,
-    },
-  ];
+const routes = [
+  {
+    path: "/",
+    component: TestPage,
+    exact: true,
+  },
+];
 
-  return <Route
-  path="/test1"
-  component={TestPage}
-/>;
-}
-
-export default Comp;
+export default routes;

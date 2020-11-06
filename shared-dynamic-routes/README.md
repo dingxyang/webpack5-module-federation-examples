@@ -1,15 +1,17 @@
-# Shared Routing Example
-
-This example demos two applications with their own sets of routes and deployments but a seamless experience for the user.
+# Shared Dynamic Routing Example
+动态加载共享路由  
+app1是主系统，app2、app3是子模块系统  
+app1可以根据配置（从后台查询），去加载对应app2或者app3暴露的界面  
+app2（app3）可以去访问app1暴露，本例子没有处理app2和app3的互相引用，要使用可以参考app1的处理方式
 
 - `app1` contains the "Home Page" (/) route.
-- `app2` contains the "About Page" (/about) route.
-- `app1` also exposes `Navigation` component.
+- `app2` contains the "About Page" (/about) "hello Page" (/hello) route.
+- `app3` contains the "Test Page" (/about) "hello Page" (/test) route.
 
 # Running Demo
 
-Run `yarn start`. This will build and serve both `app1` and `app2` on ports 3001 and 3002 respectively.
+Run `yarn start`
 
 - [localhost:3001](http://localhost:3001/)
 - [localhost:3002](http://localhost:3002/)
-  <img src="https://ssl.google-analytics.com/collect?v=1&t=event&ec=email&ea=open&t=event&tid=UA-120967034-1&z=1589682154&cid=ae045149-9d17-0367-bbb0-11c41d92b411&dt=ModuleFederationExamples&dp=/email/SharedRoutes2">
+- [localhost:3003](http://localhost:3003/)

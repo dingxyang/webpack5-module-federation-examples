@@ -15,7 +15,7 @@ function query() {
       url: "http://localhost:3003/remoteEntry.js",
       scope: "app3",
       routesModules: [
-        ["/test1", "./TestPage"],
+        ["/test", "./TestPage"],
       ]
     },
   ]);
