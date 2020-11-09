@@ -6,16 +6,22 @@ const style = { border: "1px solid #000", padding: 12 };
 function query() {
   return Promise.resolve([
     {
-      url: "http://localhost:3002/remoteEntry.js",
-      scope: "child",
+      url: "/child1/remoteEntry.js",
+      scope: "child1",
       module: "./AboutPage",
       path: "aboutPage",
     },
     {
-      url: "http://localhost:3002/remoteEntry.js",
-      scope: "child",
+      url: "/child1/remoteEntry.js",
+      scope: "child1",
       module: "./HelloPage",
       path: "helloPage",
+    },
+    {
+      url: "/child2/remoteEntry.js",
+      scope: "child2",
+      module: "./TestPage",
+      path: "testPage",
     },
   ]);
 }

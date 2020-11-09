@@ -6,13 +6,13 @@ const Child = React.lazy(() => import("./Child"));
 
 const routes = [
   {
-    path: "/child",
-    component: Child,
-  },
-  {
     path: "/",
     component: HomePage,
     exact: true,
+  },
+  {
+    path: "/child",
+    component: Child,
   },
 ];
 

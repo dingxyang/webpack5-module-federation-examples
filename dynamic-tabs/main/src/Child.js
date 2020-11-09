@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Axios from "axios";
 
 function loadComponent(scope, module) {
   return async () => {
@@ -58,7 +57,6 @@ const useDynamicScript = (args) => {
 };
 
 function System(props) {
-  debugger
   const { ready, failed } = useDynamicScript({
     url: props.system && props.system.url,
   });
@@ -80,14 +78,13 @@ function System(props) {
   );
 
   return (
-    <React.Suspense fallback="Loading System">
+    <React.Suspense>
       <Component />
     </React.Suspense>
   );
 }
 
 function Child(props) {
-  debugger
   const {
     location: { state },
   } = props;
