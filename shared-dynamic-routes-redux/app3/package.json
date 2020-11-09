@@ -1,5 +1,5 @@
 {
-  "name": "@shared-dynamic-routes/app3",
+  "name": "@shared-dynamic-routes-redux/app3",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {

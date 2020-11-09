@@ -14,7 +14,8 @@
       "shared-context/*",
       "redux-reducer-injection/*",
       "shared-routes2/*",
-      "shared-dynamic-routes/*"
+      "shared-dynamic-routes/*",
+      "shared-dynamic-routes-redux/*"
     ]
   },
   "scripts": {

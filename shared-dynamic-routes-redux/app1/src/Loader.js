@@ -53,7 +53,7 @@ const Loader = () => {
           setReady(true);
         })
         .catch(() => {
-          setFailed(true);
+          setReady(true);
         });
     });
   }, []);
