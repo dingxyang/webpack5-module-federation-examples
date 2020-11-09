@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useStore } from "react-redux";
 import { Tabs, Button } from "antd";
+import "antd/dist/antd.css";
 const { TabPane } = Tabs;
 
 const style = {

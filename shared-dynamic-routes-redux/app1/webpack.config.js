@@ -15,6 +15,41 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /(\.jsx|\.js)$/,
+        use: {
+          loader: "babel-loader"
+        },
+        exclude: /node_modules/
+      }, { // 这里配置这两个工具
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "style-loader"
+          }, {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]'
+              }, // 指定启用css modules
+              importLoaders: 1,
+            }
+          }
+        ]
+      }, { // antd样式处理
+        test:/\.css$/,
+        exclude:/src/,
+        use:[
+          { loader: "style-loader"},
+          {
+            loader: "css-loader",
+            options:{
+              importLoaders:1
+            }
+          }
+        ]
+      },
+      {
         test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
