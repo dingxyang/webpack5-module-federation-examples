@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "lerna run --scope @dynamic-tabs/* --parallel start",
+    "build": "lerna run --scope @dynamic-tabs/* build",
+    "serve": "lerna run --scope @dynamic-tabs/* --parallel serve",
+    "clean": "lerna run --scope @dynamic-tabs/* --parallel clean"
+  },
+  "devDependencies": {
+    "lerna": "3.22.1"
+  }
+}

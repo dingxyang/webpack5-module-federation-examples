@@ -9,14 +9,12 @@ function query() {
       routesModules: [
         ["/about", "./AboutPage"],
         ["/hello", "./HelloPage"],
-      ]
+      ],
     },
     {
       url: "http://localhost:3003/remoteEntry.js",
       scope: "app3",
-      routesModules: [
-        ["/test", "./TestPage"],
-      ]
+      routesModules: [["/test", "./TestPage"]],
     },
   ]);
 }
@@ -70,7 +68,10 @@ const Loader = () => {
     return <h2>Loading dynamic script</h2>;
   }
 
-  return <App system={system} />;
+  return (
+    <App system={system}/>
+    
+  );
 };
 
 export default Loader;

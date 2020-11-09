@@ -16,8 +16,8 @@ Base Example
 - [x] [Shared Routes](./shared-routes2) &mdash; Compose federated routes for a seamless user experience.
 
 My Example
-- [x] [Share Dynamic Routes](./shared-dynamic-routes/README.md) &mdash; Shared Dynamic Routes.
-
+- [x] [Share-Dynamic-Routes](./shared-dynamic-routes/README.md) &mdash; Shared Dynamic Routes.
+- [x] [Dynamic-Menus](./dynamic-menus/README.md) &mdash; 点击菜单，动态加载远程模块（使用系统标志作转发，而非写死的资源访问地址）
 
 ```
 yarn 

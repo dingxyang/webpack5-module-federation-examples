@@ -4,9 +4,8 @@ const TestPage = React.lazy(() => import("./TestPage"));
 
 const routes = [
   {
-    path: "/test",
+    path: "/testPage",
     component: TestPage,
-    exact: true,
   },
 ];
 

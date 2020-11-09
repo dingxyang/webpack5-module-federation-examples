@@ -1,0 +1,33 @@
+{
+  "name": "@shared-dynamic-routes-redux/app1",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "7.12.1",
+    "@babel/runtime": "^7.12.5",
+    "babel-loader": "8.1.0",
+    "babel-plugin-import": "^1.13.1",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "4.5.0",
+    "serve": "11.3.2",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "start": "webpack-cli serve",
+    "build": "webpack --mode production",
+    "serve": "serve dist -p 3001",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "antd": "^4.8.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.1.2"
+  }
+}
