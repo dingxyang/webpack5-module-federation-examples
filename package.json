@@ -16,7 +16,7 @@
       "shared-routes2/*",
       "shared-dynamic-routes/*",
       "shared-dynamic-routes-redux/*",
-      "dynamic-tabs/*"
+      "dynamic-menus/*"
     ]
   },
   "scripts": {
