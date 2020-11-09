@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import App from "./App";
-import { store } from "./store";
-import { Provider } from "react-redux";
 
 function query() {
   return Promise.resolve([
@@ -71,9 +69,8 @@ const Loader = () => {
   }
 
   return (
-    <Provider store={store}>
-      <App system={system} />
-    </Provider>
+    <App system={system}/>
+    
   );
 };
 
