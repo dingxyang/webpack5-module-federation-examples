@@ -15,7 +15,8 @@
       "redux-reducer-injection/*",
       "shared-routes2/*",
       "shared-dynamic-routes/*",
-      "shared-dynamic-routes-redux/*"
+      "shared-dynamic-routes-redux/*",
+      "dynamic-tabs/*"
     ]
   },
   "scripts": {
