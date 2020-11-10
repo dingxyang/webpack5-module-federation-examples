@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { withProvider } from "./cmponents/PageWrapper";
+
 const style = {
   height: 400,
   backgroundColor: "#3f51b5",
@@ -42,14 +44,4 @@ const HelloPage = () => {
   );
 };
 
-const HelloPageWrapper = (props) => {
-  const { store } = props;
-  debugger
-  return (
-    <Provider store={store || {}}>
-      <HelloPage />
-    </Provider>
-  );
-};
-
-export default HelloPageWrapper;
+export default withProvider(HelloPage);

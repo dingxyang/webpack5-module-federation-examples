@@ -1,6 +1,7 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Provider, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { withProvider } from "./cmponents/PageWrapper";
 
 const style = {
   height: 400,
@@ -29,19 +30,16 @@ const AboutPage = () => {
       <p>
         <em>a page being provided by App 2</em>
       </p>
-      <button onClick={() => {click()}}>hello</button>
+      <button
+        onClick={() => {
+          click();
+        }}
+      >
+        hello
+      </button>
       userName: {main.userName}
     </div>
   );
 };
 
-const AboutPageWrapper = (props) => {
-  const { store } = props;
-  return (
-    <Provider store={store || {}}>
-      <AboutPage />
-    </Provider>
-  );
-};
-
-export default AboutPageWrapper;
+export default withProvider(AboutPage);
