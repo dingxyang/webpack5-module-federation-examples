@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Loadable from 'react-loadable';
 
 function loadComponent(scope, module) {
   return async () => {
@@ -66,7 +67,7 @@ function System(props) {
   }
 
   if (!ready) {
-    return <h2>Loading dynamic script: {props.system.url}</h2>;
+    return null;
   }
 
   if (failed) {

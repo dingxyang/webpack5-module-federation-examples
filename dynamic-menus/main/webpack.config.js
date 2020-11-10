@@ -29,7 +29,7 @@ module.exports = {
       name: "main",
       filename: "remoteEntry.js",
       exposes: {
-        "./Navigation": "./src/Navigation",
+        "./Navigation": "./src/components/Navigation",
         "./routes": "./src/routes",
       },
       shared: {

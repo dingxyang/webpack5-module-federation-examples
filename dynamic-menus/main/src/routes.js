@@ -1,8 +1,8 @@
 import React from "react";
 
 
-const HomePage = React.lazy(() => import("./HomePage"));
-const Child = React.lazy(() => import("./Child"));
+const HomePage = React.lazy(() => import("./pages/HomePage"));
+const RemotePage = React.lazy(() => import("./pages/RemotePage"));
 
 const routes = [
   {
@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: "/child",
-    component: Child,
+    component: RemotePage,
   },
 ];
 
