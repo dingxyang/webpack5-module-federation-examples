@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Provider, useSelector } from "react-redux";
 
 const style = {
   height: 400,
@@ -10,6 +11,7 @@ const style = {
 
 const AboutPage = () => {
   const history = useHistory();
+  const main = useSelector((state) => state.main);
   const click = () => {
     history.push({
       pathname: "/child/helloPage",
@@ -28,8 +30,18 @@ const AboutPage = () => {
         <em>a page being provided by App 2</em>
       </p>
       <button onClick={() => {click()}}>hello</button>
+      userName: {main.userName}
     </div>
   );
 };
 
-export default AboutPage;
+const AboutPageWrapper = (props) => {
+  const { store } = props;
+  return (
+    <Provider store={store || {}}>
+      <AboutPage />
+    </Provider>
+  );
+};
+
+export default AboutPageWrapper;

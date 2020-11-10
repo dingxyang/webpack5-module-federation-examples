@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Loadable from "react-loadable";
+import { useStore } from 'react-redux';
 
 function loadComponent(scope, module) {
   return async () => {
@@ -58,6 +59,7 @@ const useDynamicScript = (args) => {
 };
 
 function System(props) {
+
   const { ready, failed } = useDynamicScript({
     url: props.system && props.system.url,
   });
@@ -82,7 +84,9 @@ function System(props) {
     loading: MyLoadingComponent,
   });
 
-  return <LoadableAnotherComponent />;
+  const store = useStore();
+
+  return <LoadableAnotherComponent store={store} />;
 
   // const Component = React.lazy(
   //   loadComponent(props.system.scope, props.system.module)
@@ -100,6 +104,7 @@ function Child(props) {
     location: { state },
   } = props;
   const [system, setSystem] = React.useState(undefined);
+
 
   useEffect(() => {
     setSystem(state);

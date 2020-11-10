@@ -39,7 +39,6 @@ const RemoteApp = () => {
 
 const RemoteAppWrapper = (props) => {
   const { store } = props;
-  debugger
   useEffect(() => {
     store.injectReducer(remoteAppScope, reducer);
   }, []);
