@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Loadable from 'react-loadable';
+import Loadable from "react-loadable";
 
 function loadComponent(scope, module) {
   return async () => {
@@ -74,15 +74,25 @@ function System(props) {
     return <h2>Failed to load dynamic script: {props.system.url}</h2>;
   }
 
-  const Component = React.lazy(
-    loadComponent(props.system.scope, props.system.module)
-  );
+  function MyLoadingComponent() {
+    return <div>Loading...</div>;
+  }
+  const LoadableAnotherComponent = Loadable({
+    loader: loadComponent(props.system.scope, props.system.module),
+    loading: MyLoadingComponent,
+  });
 
-  return (
-    <React.Suspense>
-      <Component />
-    </React.Suspense>
-  );
+  return <LoadableAnotherComponent />;
+
+  // const Component = React.lazy(
+  //   loadComponent(props.system.scope, props.system.module)
+  // );
+
+  // return (
+  //   <React.Suspense>
+  //     <Component />
+  //   </React.Suspense>
+  // );
 }
 
 function Child(props) {
