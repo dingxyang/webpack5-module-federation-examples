@@ -18,7 +18,7 @@ const AboutPage = () => {
   const [remoteAppInput, setRemoteAppInput] = useState('');
   
   return (
-    <div style={style}>
+    <div>
       <h1>About Page</h1>
       <p>
         <em>a page being provided by App 2</em>
@@ -49,6 +49,10 @@ const RemoteAppWrapper = (props) => {
   const { store } = props;
   useEffect(() => {
     store.injectReducer(remoteAppScope, reducer);
+    return () => {
+      debugger
+      store.injectReducer(remoteAppScope, {});
+    }
   }, []);
 
   return (
