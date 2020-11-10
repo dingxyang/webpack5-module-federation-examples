@@ -41,7 +41,6 @@ const App = ({ system }) => {
     setrouteList(routesArr);
   }, [system]);
 
-  debugger
   return (
     <Provider store={store}>
       <HashRouter>

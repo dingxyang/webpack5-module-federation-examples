@@ -1,5 +1,7 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { withProvider } from "./cmponents/PageWrapper";
 
 const style = {
   height: 400,
@@ -10,6 +12,7 @@ const style = {
 
 const AboutPage = () => {
   const history = useHistory();
+  const main = useSelector((state) => state.main);
   const click = () => {
     history.push({
       pathname: "/child/helloPage",
@@ -27,9 +30,16 @@ const AboutPage = () => {
       <p>
         <em>a page being provided by App 2</em>
       </p>
-      <button onClick={() => {click()}}>hello</button>
+      <button
+        onClick={() => {
+          click();
+        }}
+      >
+        hello
+      </button>
+      userName: {main.userName}
     </div>
   );
 };
 
-export default AboutPage;
+export default withProvider(AboutPage);

@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import Loadable from "react-loadable";
+import { useStore } from 'react-redux';
 
 function loadComponent(scope, module) {
   return async () => {
@@ -57,6 +59,7 @@ const useDynamicScript = (args) => {
 };
 
 function System(props) {
+
   const { ready, failed } = useDynamicScript({
     url: props.system && props.system.url,
   });
@@ -66,22 +69,34 @@ function System(props) {
   }
 
   if (!ready) {
-    return <h2>Loading dynamic script: {props.system.url}</h2>;
+    return null;
   }
 
   if (failed) {
     return <h2>Failed to load dynamic script: {props.system.url}</h2>;
   }
 
-  const Component = React.lazy(
-    loadComponent(props.system.scope, props.system.module)
-  );
+  function MyLoadingComponent() {
+    return <div>Loading...</div>;
+  }
+  const LoadableAnotherComponent = Loadable({
+    loader: loadComponent(props.system.scope, props.system.module),
+    loading: MyLoadingComponent,
+  });
 
-  return (
-    <React.Suspense>
-      <Component />
-    </React.Suspense>
-  );
+  const store = useStore();
+
+  return <LoadableAnotherComponent store={store} />;
+
+  // const Component = React.lazy(
+  //   loadComponent(props.system.scope, props.system.module)
+  // );
+
+  // return (
+  //   <React.Suspense>
+  //     <Component />
+  //   </React.Suspense>
+  // );
 }
 
 function Child(props) {
@@ -89,6 +104,7 @@ function Child(props) {
     location: { state },
   } = props;
   const [system, setSystem] = React.useState(undefined);
+
 
   useEffect(() => {
     setSystem(state);
